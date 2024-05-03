@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/Web.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #40e0d0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: black;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 44px; 
+        }
+
+        p {
+            text-align: center;
+            font-size: 44px; 
+            color: black; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <p>User Response: {{ prediction }}</p>
+    <p>{% if prediction == 0 %}
+        User will not Click on Ad.
+        {% elif prediction == 1 %}
+        User will Click on Ad.
+        {% endif %}
+    </p>
+</body>
+</html>
+
+

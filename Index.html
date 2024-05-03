@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/Web.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #40e0d0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: black; 
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+
+        label {
+            font-weight: bold;
+            color: teal; 
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        select,
+        input[type="number"],
+        input[type="radio"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            background-color: coral; /* Change background color of input fields */
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: turquoise; 
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 22px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: lightgrey;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Response Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="DailyTime">Daily Time Spent on Site (Minutes):</label>
+        <input type="number" name="Daily Time Spent on Site" id="DailyTime" min="0" value="30"><br>
+        <label for="Age">Age:</label>
+        <input type="number" name="Age" id="Age" min="18" max="100" value="25"><br>
+        <label for="AreaIncome">Area Income:</label>
+        <input type="number" name="Area Income" id="AreaIncome" min="0" value="50000"><br>
+        <label for="DailyUsage">Daily Internet Usage (MB):</label>
+        <input type="number" name="Daily Internet Usage" id="DailyUsage" min="0" value="100"><br>
+        <label for="Gender">Gender:</label><br>
+        <input type="radio" id="male" name="Male" value="1" checked>
+        <label for="male" style="background-color: lightgrey;">Male</label><br>
+        <input type="radio" id="female" name="Male" value="0">
+        <label for="female" style="background-color: lightgrey;">Female</label><br><br>
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
+
